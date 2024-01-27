@@ -1,0 +1,44 @@
+<!-- ngIf diz se ele aparece ou não -->
+<h1>My app</h1>
+<p >card works!</p>
+<button>Olá, mundo!</button>
+
+<ul>
+  <!-- p = element -->
+  <li *ngFor="let p of produtos; let i = index"
+    (click)="remover(i)"
+    >
+    {{ i+1 }} - {{ p }}
+  </li>
+  <!-- reatividade -->
+  <button (click)="adicionar()">Adicionar</button>
+</ul>
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superUser'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+      <li>gerenciar admins</li>
+    </ul>
+  </div>
+  <div *ngSwitchDefault>
+    <ul>
+      <li>logar</li>
+    </ul>
+  </div>
+</div>
